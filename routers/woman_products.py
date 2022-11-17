@@ -8,7 +8,7 @@ from schemas import SearchSchema, ZaraWomanProductsSchema
 router = APIRouter(prefix='/products/woman', tags=['Woman Products'])
 
 
-@router.get('/{product_id}', response_model=ZaraWomanProductsSchema)
+@router.get('/{product_id}')
 def get_woman_product(
     product_id: int,
     db: Session = Depends(get_db)
